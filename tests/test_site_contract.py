@@ -120,7 +120,7 @@ class SiteContract(unittest.TestCase):
         image = ROOT / "assets/social-card.jpg"
         self.assertTrue(image.exists(), "Social share image must be committed")
         content = image.read_bytes()
-        self.assertTrue(content.startswith(b"\\xff\\xd8\\xff"), "Must be a JPEG")
+        self.assertTrue(content.startswith(bytes([0xFF, 0xD8, 0xFF])), "Must be a JPEG")
         self.assertLess(len(content), 1000000, "Social card should load quickly")
 
     def test_llms_truthfulness(self):
