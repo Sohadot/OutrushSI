@@ -18,10 +18,10 @@ body{background:radial-gradient(ellipse at 36% 1%,#f5f0eb 0%,#ded8d1 55%,#d5cec6
 .concept-v2 .hero-support{font-size:clamp(15px,1.38vw,19px);font-weight:430;line-height:1.35;color:#575451;max-width:495px;margin:0}
 .concept-v2 .hero-buttons{margin-top:33px;gap:26px}
 .concept-v2 .hero-buttons .button{padding:12px 22px;min-height:49px}
-.concept-v2 .hero .flow-wrap{margin-left:-2%;width:104%;max-width:none}
+.concept-v2 .hero .flow-wrap{margin-left:-2%;width:104%;max-width:none;filter:drop-shadow(0 16px 16px rgba(48,51,50,.055))}
 .flow-visual{display:block;width:100%;height:auto;overflow:visible}
-.v2-flow-lines path{stroke-dasharray:3 18;animation:v2flow 10s linear infinite}
-.v2-flow-lines path:nth-child(-n+3){animation-direction:reverse}
+.v2-flow-lines path{stroke-dasharray:none;animation:none;filter:drop-shadow(0 0 3px rgba(79,241,230,.75));stroke-width:3.3}
+.v2-flow-lines path:nth-child(-n+3){filter:drop-shadow(0 0 3px rgba(255,255,255,.74))}
 @keyframes v2flow{to{stroke-dashoffset:-168}}
 .flow-mobile{display:none}
 .concept-v2 .thesis-band,.concept-v2 .identity-band{background:rgba(255,255,255,.27);border-block:1px solid var(--v2-rule)}
@@ -151,3 +151,13 @@ body{background:radial-gradient(ellipse at 36% 1%,#f5f0eb 0%,#ded8d1 55%,#d5cec6
  .concept-v2 .section-body{border-left:0;border-top:1px solid var(--v2-rule);padding:20px 0 0}
 }
 @media(prefers-reduced-motion:reduce){.v2-flow-lines path{animation:none;stroke-dasharray:none}*,*:before,*:after{scroll-behavior:auto!important}}
+
+/* Additional mobile hierarchy tuning after visual screenshot review. */
+@media(max-width:540px){
+ .concept-v2 .site-header .header-action,.acquire-v2 .site-header .header-action{font-size:0;white-space:nowrap;min-width:0;padding:9px 12px;gap:8px;min-height:38px}
+ .concept-v2 .site-header .header-action::before,.acquire-v2 .site-header .header-action::before{content:"Acquire";font-size:12px;line-height:1}
+ .concept-v2 .site-header .header-action span,.acquire-v2 .site-header .header-action span{font-size:16px}
+ .concept-v2 .flow-mobile{padding-top:18px;padding-bottom:23px}
+ .concept-v2 .section-body p,.concept-v2 .section-body p.body-large{line-height:1.65}
+ .concept-v2 .application h3{letter-spacing:-.04em}
+}
