@@ -1,0 +1,163 @@
+/* OUTRUSH.SI — fidelity layer for the approved champagne-grey concept.
+   Static-first, no font downloads, no paid-library dependency.
+   Overrides legacy desktop styling without affecting the domain's semantics. */
+:root{--v2-bg:#ded7cf;--v2-paper:#eee8e1;--v2-ink:#242726;--v2-teal:#20b3bb;--v2-rule:rgba(50,47,43,.13);--v2-glass:rgba(255,255,255,.51)}
+body{background:radial-gradient(ellipse at 36% 1%,#f5f0eb 0%,#ded8d1 55%,#d5cec6 100%);color:var(--v2-ink)}
+.site-header{background:rgba(235,229,222,.89);border-bottom:1px solid rgba(70,63,59,.16);backdrop-filter:blur(18px)}
+.header-inner{height:66px}
+.wordmark{font-size:28px;letter-spacing:-.055em}.wordmark span,.concept-v2 .hero h1 span{color:#19c1cb}
+.desktop-nav a{font-size:14px;color:#34393a}
+.button{border-radius:12px;box-shadow:0 8px 16px rgba(31,29,29,.13);font-weight:700;transition:transform .2s,box-shadow .2s}
+.button-dark{background:linear-gradient(165deg,#303232,#111415 75%);border:1px solid rgba(255,255,255,.15);color:#fff}
+.button-dark:hover{box-shadow:0 10px 23px rgba(24,36,36,.22)}
+.button-dark span{color:#29deef}
+.concept-v2 .hero{width:min(calc(100% - 76px),1380px);min-height:480px;grid-template-columns:37% 63%;padding-block:46px 28px;align-items:center;isolation:isolate}
+.concept-v2 .hero-copy{padding-left:2px}
+.concept-v2 .hero h1{font-size:clamp(40px,4.5vw,68px);letter-spacing:-.06em;margin:0 0 14px;font-weight:840;line-height:1.05}
+.concept-v2 .hero-lead{font-size:clamp(28px,2.95vw,45px);line-height:1.11;font-weight:490;letter-spacing:-.045em;color:#575554;white-space:nowrap;margin:0 0 8px}
+.concept-v2 .hero-support{font-size:clamp(15px,1.38vw,19px);font-weight:430;line-height:1.35;color:#575451;max-width:495px;margin:0}
+.concept-v2 .hero-buttons{margin-top:33px;gap:26px}
+.concept-v2 .hero-buttons .button{padding:12px 22px;min-height:49px}
+.concept-v2 .hero .flow-wrap{margin-left:-2%;width:104%;max-width:none;filter:drop-shadow(0 16px 16px rgba(48,51,50,.055))}
+.flow-visual{display:block;width:100%;height:auto;overflow:visible}
+.v2-flow-lines path{stroke-dasharray:none;animation:none;filter:drop-shadow(0 0 3px rgba(79,241,230,.75));stroke-width:3.3}
+.v2-flow-lines path:nth-child(-n+3){filter:drop-shadow(0 0 3px rgba(255,255,255,.74))}
+@keyframes v2flow{to{stroke-dashoffset:-168}}
+.flow-mobile{display:none}
+.concept-v2 .thesis-band,.concept-v2 .identity-band{background:rgba(255,255,255,.27);border-block:1px solid var(--v2-rule)}
+.concept-v2 .thesis-band{padding-block:31px}
+.concept-v2 .section{padding-block:39px}
+.concept-v2 .editorial-grid{grid-template-columns:33% 67%}
+.concept-v2 .section-name{padding-right:26px}
+.concept-v2 .section-name h2{font-size:clamp(27px,3vw,45px);line-height:1.08;letter-spacing:-.045em}
+.concept-v2 .section-index{font-size:10px;letter-spacing:.15em;margin-bottom:13px;color:#717773}
+.concept-v2 .section-body{padding-left:clamp(24px,4vw,55px)}
+.concept-v2 .section-body p{font-size:15px;line-height:1.55;margin:0 0 12px;color:#454440}
+.concept-v2 .section-body p.body-large{font-size:17px;font-weight:450;line-height:1.55;letter-spacing:0}
+.concept-v2 .section-body p.pull-quote{font-size:18px;margin-top:14px;font-weight:650}
+.concept-v2 #meaning{padding-top:33px;padding-bottom:33px}
+.concept-v2 #meaning .definition{grid-template-columns:69px 1fr;gap:12px;padding:0 0 12px;margin:0 0 12px;border-color:rgba(74,74,72,.07)}
+.concept-v2 #meaning .definition strong{font-size:16px}
+.concept-v2 #meaning .definition p{font-size:15px;display:inline;margin-left:10px;font-style:italic}
+.concept-v2 #meaning .part-of-speech{font-size:10px;background:#e1d9d0;margin-top:3px}
+.concept-v2 #meaning .source-line{font-size:12px}
+.concept-v2 #meaning .pull-quote{font-size:16px}
+.impact-band{border-block:1px solid var(--v2-rule);background:rgba(252,249,245,.27);padding:34px 0}
+.impact-layout{display:grid;grid-template-columns:29% 71%;gap:22px;align-items:center}
+.impact-copy h2{font-size:clamp(28px,3vw,45px);line-height:1.08}
+.impact-rule{display:block;margin:22px 0 17px;width:36px;height:2px;background:#17c6c9}
+.impact-copy p{font-style:italic;font-size:22px;line-height:1.25;color:#57514d;max-width:260px}
+.impact-art{position:relative;min-width:0;border:1px solid rgba(255,255,255,.65);border-radius:23px;padding:19px;background:radial-gradient(ellipse at 53% 52%,rgba(252,252,248,.56),rgba(240,233,224,.28));box-shadow:0 10px 22px rgba(66,58,51,.08)}
+.impact-svg{width:100%;height:auto;display:block}
+.impact-labels{display:flex;justify-content:space-between;padding-inline:2%;text-align:center;color:#5b5c5a;font-size:10px;letter-spacing:.11em;font-weight:750}
+.concept-v2 #applications .section-heading-row{grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;align-items:center}
+.concept-v2 #applications .section-heading-row h2{font-size:clamp(28px,3.1vw,45px);white-space:normal}
+.concept-v2 #applications .section-heading-row p{font-size:16px;font-style:italic}
+.concept-v2 #applications .application-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.concept-v2 #applications .application{border:1px solid rgba(255,255,255,.68);border-radius:16px;box-shadow:0 8px 18px rgba(68,59,54,.10);background:linear-gradient(145deg,rgba(255,255,255,.76),rgba(231,225,219,.63));min-height:185px;padding:23px 19px 19px}
+.concept-v2 #applications .app-number{font-size:10px}
+.concept-v2 #applications .application h3{font-size:clamp(18px,1.8vw,25px);margin:19px 0 11px;line-height:1.12;white-space:nowrap}
+.concept-v2 #applications .application p{font-size:13px;line-height:1.5}
+.concept-v2 #applications .app-line{margin-top:20px;background:#18bfc9;height:2px}
+.concept-v2 #applications .fineprint{font-size:12px}
+.concept-v2 .identity-band{padding-block:34px}
+.concept-v2 .identity-band .editorial-grid{grid-template-columns:28% 72%;align-items:start}
+.concept-v2 .identity-band .section-body{padding-left:26px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.concept-v2 .identity-band .identity-row{display:flex;flex-direction:column;gap:9px;border:0;border-right:1px solid rgba(50,50,50,.12);padding:0 10px 0 0;margin:0}
+.concept-v2 .identity-band .identity-row:last-child{border-right:0}
+.concept-v2 .identity-row>span{font-size:13px;display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.65);background:linear-gradient(140deg,#fffaf4,#e2dcd5);border-radius:10px;box-shadow:0 4px 7px rgba(70,60,60,.09);color:#343936}
+.concept-v2 .identity-row h3{font-size:16px;line-height:1.25;margin:0 0 5px}
+.concept-v2 .identity-row p{font-size:12px;line-height:1.5}
+.concept-v2 .closing{width:100%;max-width:none;padding:50px 24px 57px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 40%,#f2eee9 0%,#d5cec8 70%,#c7bdb4 100%)}
+.concept-v2 .closing::before,.concept-v2 .closing::after{content:"";position:absolute;z-index:-1;width:125%;height:120px;left:-12.5%;bottom:-24px;border-top:1px solid rgba(255,255,255,.90);border-radius:50%;transform:rotate(-5deg);box-shadow:0 -8px 24px rgba(255,248,235,.55)}
+.concept-v2 .closing::after{transform:rotate(6deg);bottom:-12px;border-color:rgba(246,240,234,.9)}
+.concept-v2 .closing-rule{width:50px;margin:0 auto 13px}
+.concept-v2 .closing h2{font-size:clamp(32px,3.1vw,47px);line-height:1.1}
+.concept-v2 .closing p{font-size:15px;color:#504e4a;max-width:680px;margin:12px auto 20px}
+.concept-v2 .closing-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:17px}
+.concept-v2 .closing-buttons .button{min-width:250px}
+.button-outline{background:linear-gradient(145deg,rgba(255,255,255,.65),rgba(231,225,220,.82));border:1px solid rgba(50,45,41,.37);color:#262b2b}
+.concept-v2 .closing p.closing-security{font-size:12px;margin:18px auto 0;color:#55595a}
+.site-footer{background:#d1c8bd}
+.acquire-v2 .acquire-hero{background:radial-gradient(ellipse at 54% 20%,#eee9e3 0%,#d5cdc4 100%)}
+.acquire-v2 .offer-panel{border-color:rgba(255,255,255,.76);background:linear-gradient(125deg,rgba(255,255,255,.76),rgba(232,225,217,.7));border-radius:20px;box-shadow:0 18px 32px rgba(56,46,42,.1)}
+.acquire-v2 .acquisition-intro h1 em{color:#168d96}
+@media(max-width:1100px){
+ .concept-v2 .hero{grid-template-columns:38% 62%;min-height:390px}
+ .concept-v2 .hero h1{font-size:clamp(36px,4.8vw,56px)}
+ .concept-v2 .hero-lead{font-size:clamp(26px,3.1vw,36px)}
+ .concept-v2 .application-grid{gap:8px}
+ .concept-v2 #applications .application{padding-inline:14px}
+}
+@media(max-width:760px){
+ .concept-v2 .hero{width:min(calc(100% - 38px),720px);grid-template-columns:1fr;gap:17px;padding:43px 0 31px}
+ .concept-v2 .hero h1{font-size:clamp(48px,10vw,70px)}
+ .concept-v2 .hero-lead{font-size:clamp(31px,5.7vw,44px);white-space:normal}
+ .concept-v2 .hero-support{font-size:17px}
+ .concept-v2 .hero-buttons{margin-top:20px}
+ .concept-v2 .hero .flow-wrap{margin:4px auto;width:100%}
+ .concept-v2 .hero .flow-visual{display:block}
+ .concept-v2 .impact-layout{grid-template-columns:1fr}
+ .concept-v2 .impact-copy p{max-width:none}
+ .concept-v2 #applications .application-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .concept-v2 .identity-band .editorial-grid{grid-template-columns:1fr}
+ .concept-v2 .identity-band .section-body{padding:18px 0 0;border-left:0;border-top:1px solid var(--v2-rule)}
+}
+@media(max-width:540px){
+ .concept-v2 .hero{padding-top:35px}
+ .concept-v2 .hero h1{font-size:clamp(43px,11vw,65px)}
+ .concept-v2 .hero-lead{font-size:clamp(29px,8vw,44px)}
+ .concept-v2 .hero-buttons{gap:15px}
+ .concept-v2 .flow-visual{display:none!important}
+ .concept-v2 .flow-mobile{display:grid;justify-items:center;gap:12px;background:radial-gradient(ellipse at 50% 48%,rgba(170,221,216,.27),transparent 70%);padding:13px 1px 19px}
+ .concept-v2 .mobile-inputs,.concept-v2 .mobile-outputs{display:grid;grid-template-columns:repeat(3,1fr);width:100%;gap:7px}
+ .concept-v2 .mobile-outputs{grid-template-columns:repeat(2,1fr)}
+ .concept-v2 .mobile-inputs span,.concept-v2 .mobile-outputs span{background:linear-gradient(150deg,rgba(255,255,255,.90),rgba(222,218,208,.77));box-shadow:0 8px 12px rgba(60,55,50,.13);border:1px solid rgba(255,255,255,.94);padding:13px 6px;border-radius:10px;text-align:center;font-size:13px}
+ .concept-v2 .mobile-outputs span{background:linear-gradient(150deg,rgba(238,252,249,.88),rgba(208,230,224,.75))}
+ .concept-v2 .mobile-core{clip-path:polygon(22% 0,78% 0,100% 50%,78% 100%,22% 100%,0 50%);padding:30px 35px;background:linear-gradient(135deg,#586b65,#101a1f);box-shadow:0 12px 20px rgba(29,37,37,.24);font-size:13px;letter-spacing:.08em}
+ .concept-v2 .mobile-flow-arrow{font-size:30px;color:#149c9c;text-shadow:0 0 12px rgba(20,210,209,.42)}
+ .concept-v2 .thesis-band,.concept-v2 .section,.concept-v2 .identity-band{padding-block:34px}
+ .concept-v2 .editorial-grid{grid-template-columns:1fr}
+ .concept-v2 .section-name{padding:0 0 13px}
+ .concept-v2 .section-name h2{font-size:36px}
+ .concept-v2 .section-body{border-left:0;border-top:1px solid var(--v2-rule);padding:17px 0 0}
+ .concept-v2 #meaning .definition p{display:block;margin-left:0}
+ .impact-band{padding-block:28px}
+ .impact-copy h2{font-size:36px}
+ .impact-copy p{font-size:17px}
+ .impact-art{padding:10px;border-radius:13px}
+ .impact-labels{font-size:8px}
+ .concept-v2 #applications .section-heading-row{grid-template-columns:1fr}
+ .concept-v2 #applications .section-heading-row h2{font-size:33px}
+ .concept-v2 #applications .application-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .concept-v2 #applications .application{min-height:167px;padding:16px 13px}
+ .concept-v2 #applications .application h3{white-space:normal;font-size:20px}
+ .concept-v2 #applications .application p{font-size:12px}
+ .concept-v2 .identity-band .section-body{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}
+ .concept-v2 .identity-row{border:0!important}
+ .concept-v2 .closing h2{font-size:34px}
+ .concept-v2 .closing-buttons{flex-direction:column;align-items:center}
+ .concept-v2 .closing-buttons .button{width:min(100%,330px)}
+}
+@media(pointer:coarse) and (max-width:1100px) and (min-width:541px){
+ /* Covers Android Chrome's "Desktop site" viewport mode; avoid unreadable
+    two-column miniature layouts on touch-first devices. */
+ .concept-v2 .hero{grid-template-columns:1fr!important;max-width:850px!important}
+ .concept-v2 .hero .flow-wrap{max-width:750px;margin:24px auto}
+ .concept-v2 .desktop-nav{display:none}
+ .concept-v2 .mobile-menu{display:block}
+ .concept-v2 .editorial-grid{grid-template-columns:1fr}
+ .concept-v2 .section-name{padding-bottom:18px}
+ .concept-v2 .section-body{border-left:0;border-top:1px solid var(--v2-rule);padding:20px 0 0}
+}
+@media(prefers-reduced-motion:reduce){.v2-flow-lines path{animation:none;stroke-dasharray:none}*,*:before,*:after{scroll-behavior:auto!important}}
+
+/* Additional mobile hierarchy tuning after visual screenshot review. */
+@media(max-width:540px){
+ .concept-v2 .site-header .header-action,.acquire-v2 .site-header .header-action{font-size:0;white-space:nowrap;min-width:0;padding:9px 12px;gap:8px;min-height:38px}
+ .concept-v2 .site-header .header-action::before,.acquire-v2 .site-header .header-action::before{content:"Acquire";font-size:12px;line-height:1}
+ .concept-v2 .site-header .header-action span,.acquire-v2 .site-header .header-action span{font-size:16px}
+ .concept-v2 .flow-mobile{padding-top:18px;padding-bottom:23px}
+ .concept-v2 .section-body p,.concept-v2 .section-body p.body-large{line-height:1.65}
+ .concept-v2 .application h3{letter-spacing:-.04em}
+}

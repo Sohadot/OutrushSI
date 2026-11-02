@@ -52,6 +52,26 @@ try:
                 results.append({"viewport":label,"page":suffix,"horizontalOverflow":False,"screenshot":str(await_path.relative_to(ROOT))})
             assert not errors, f"{label}: JS exceptions: {errors}"
             page.close()
+        # Simulate a touch-first handset requesting a larger desktop viewport.
+        # This catches the miniature desktop layout seen in the user's screenshot.
+        touch = browser.new_context(
+            viewport={"width": 980, "height": 1000},
+            device_scale_factor=1,
+            has_touch=True,
+            is_mobile=True,
+        )
+        touch_page = touch.new_page()
+        touch_page.goto(BASE + "/", wait_until="networkidle")
+        touch_layout = touch_page.evaluate("""() => ({
+            coarse: matchMedia('(pointer: coarse)').matches,
+            columns: getComputedStyle(document.querySelector('.hero')).gridTemplateColumns,
+            navHidden: getComputedStyle(document.querySelector('.desktop-nav')).display === 'none'
+        })""")
+        assert touch_layout["coarse"], f"Touch emulation not active: {touch_layout}"
+        assert touch_layout["navHidden"], f"Desktop navigation should collapse on touch: {touch_layout}"
+        touch_page.screenshot(path=str(OUTPUT / "touch-desktop-request-concept.png"), full_page=True, animations="disabled")
+        results.append({"viewport":"touch-desktop-request","page":"concept","screenshot":"artifacts/browser-preview/touch-desktop-request-concept.png"})
+        touch.close()
         browser.close()
         (OUTPUT / "manifest.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
         print(json.dumps(results, indent=2))
