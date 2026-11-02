@@ -1,0 +1,19 @@
+name: Static site contract
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - feat/concept-led-landing-v1
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify static pages, offers and indexing
+        run: python3 -m unittest discover -s tests -v
