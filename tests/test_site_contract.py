@@ -93,7 +93,7 @@ class SiteContract(unittest.TestCase):
         self.assertNotIn("Disallow: /acquire", ROBOTS)
 
     def test_accessibility_and_runtime(self):
-        self.assertIn('aria-labelledby="flow-title flow-desc"', HOME)
+        self.assertIn('aria-labelledby="outrushhero-title outrushhero-desc"', HOME)
         self.assertIn('class="flow-mobile"', HOME)
         self.assertIn("prefers-reduced-motion:reduce", CSS)
         self.assertIn("a:focus-visible", CSS)
