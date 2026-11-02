@@ -116,6 +116,13 @@ class SiteContract(unittest.TestCase):
         self.assertIn('property="og:url" content="https://outrush.si/"', HOME)
         self.assertIn('property="og:url" content="https://outrush.si/acquire/"', ACQUIRE)
 
+    def test_social_image_exists(self):
+        image = ROOT / "assets/social-card.jpg"
+        self.assertTrue(image.exists(), "Social share image must be committed")
+        content = image.read_bytes()
+        self.assertTrue(content.startswith(b"\\xff\\xd8\\xff"), "Must be a JPEG")
+        self.assertLess(len(content), 1000000, "Social card should load quickly")
+
     def test_llms_truthfulness(self):
         self.assertIn("not an operating company", LLMS)
         self.assertIn("not the domain's official meaning", LLMS)
