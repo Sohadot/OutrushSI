@@ -1,0 +1,37 @@
+name: Build social link image
+on:
+  push:
+    branches:
+      - feat/concept-led-landing-v1
+    paths:
+      - assets/social-card.svg
+      - tools/render_social_card.py
+      - .github/workflows/build-social-card.yml
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install cairosvg pillow
+      - name: Render a 1200x630 link preview
+        run: python tools/render_social_card.py
+      - name: Commit output on the feature branch only
+        env:
+          BRANCH: feat/concept-led-landing-v1
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/social-card.jpg
+          if git diff --cached --quiet; then
+            echo "No image change"
+          else
+            git commit -m "Generate social preview JPG from approved vector source"
+            git push origin "HEAD:$BRANCH"
+          fi

@@ -102,6 +102,20 @@ class SiteContract(unittest.TestCase):
         parsed.feed(HOME)
         self.assertEqual([s.get("src") for s in parsed.scripts if s.get("src")], ["/script.js"])
 
+    def test_link_preview_cards(self):
+        expected = [
+            'property="og:image" content="https://outrush.si/assets/social-card.jpg"',
+            'property="og:image:width" content="1200"',
+            'property="og:image:height" content="630"',
+            'name="twitter:card" content="summary_large_image"',
+            'name="twitter:image" content="https://outrush.si/assets/social-card.jpg"',
+        ]
+        for html in (HOME, ACQUIRE):
+            for entry in expected:
+                self.assertIn(entry, html)
+        self.assertIn('property="og:url" content="https://outrush.si/"', HOME)
+        self.assertIn('property="og:url" content="https://outrush.si/acquire/"', ACQUIRE)
+
     def test_llms_truthfulness(self):
         self.assertIn("not an operating company", LLMS)
         self.assertIn("not the domain's official meaning", LLMS)
